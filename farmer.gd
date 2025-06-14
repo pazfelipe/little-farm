@@ -1,0 +1,38 @@
+extends CharacterBody2D
+
+var SPEED = 100
+
+func _ready():
+	$AnimatedSprite2D.play("idle")
+	print(Globals.tomato_crops)
+	
+	var butterfly = get_parent().get_node_or_null("butterfly/AnimationPlayer")
+	if butterfly:
+		butterfly.play("get_day")
+	
+func _physics_process(delta: float) -> void:
+	
+	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	if direction:
+		velocity = direction * SPEED
+		
+	else:
+		velocity = Vector2(0,0)
+		$AnimatedSprite2D.play("idle")
+	
+	move_and_slide()
+	
+	if Input.is_action_just_pressed("ui_left"):
+		$AnimatedSprite2D.play("moving_backward")
+		
+	if Input.is_action_just_pressed("ui_right"):
+		$AnimatedSprite2D.play("moving_forward")
+
+
+func _on_bucket_crops_body_entered(body: Node2D) -> void:
+	Globals.tomato_crops += 1
+
+
+func _on_tomato_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

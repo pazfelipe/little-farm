@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://cudh423j6tp5e"]
+
+[ext_resource type="Texture2D" uid="uid://13wwtciahmlw" path="res://assets/crops/crops.png" id="1_ajaoc"]
+[ext_resource type="Script" uid="uid://c0sc0hoq6du3d" path="res://tomato.gd" id="1_joa5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joa5w"]
+atlas = ExtResource("1_ajaoc")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bka0x"]
+atlas = ExtResource("1_ajaoc")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg4fp"]
+atlas = ExtResource("1_ajaoc")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xo0b"]
+atlas = ExtResource("1_ajaoc")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk7vq"]
+atlas = ExtResource("1_ajaoc")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14leh"]
+atlas = ExtResource("1_ajaoc")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o4sd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joa5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bka0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg4fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xo0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk7vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14leh")
+}],
+"loop": true,
+"name": &"tomato",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4goe"]
+size = Vector2(12.25, 11.75)
+
+[node name="tomato" type="Area2D"]
+monitorable = false
+script = ExtResource("1_joa5w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2o4sd")
+animation = &"tomato"
+frame_progress = 0.738148
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k4goe")

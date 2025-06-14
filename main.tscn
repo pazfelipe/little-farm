@@ -1,0 +1,319 @@
+[gd_scene load_steps=33 format=3 uid="uid://ct5dr32p4lpid"]
+
+[ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cidclijdo8rmc" path="res://farmer.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cudh423j6tp5e" path="res://tomato.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dvpallg5h1jaw" path="res://assets/tilemaps/summer and spring items.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://b4l1enbld0m0y" path="res://assets/bugs/butterfly.png" id="6_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("4_1bvp3")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}],
+"loop": true,
+"name": &"bucket",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
+atlas = ExtResource("6_7mycd")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d13ii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cqfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaehf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_074og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cegan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82xsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_getpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryguw")
+}],
+"loop": true,
+"name": &"butterfly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u8w0"]
+size = Vector2(32, 23)
+
+[sub_resource type="Animation" id="Animation_0odxb"]
+resource_name = "flying"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butterfly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 150), Vector2(332, 177)]
+}
+
+[sub_resource type="Animation" id="Animation_lswn8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butterfly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("butterfly/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+resource_name = "get_night"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butterfly/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "get_day"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butterfly/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6jrf"]
+_data = {
+&"RESET": SubResource("Animation_lswn8"),
+&"flying": SubResource("Animation_0odxb"),
+&"get_day": SubResource("Animation_272bh"),
+&"get_night": SubResource("Animation_7mycd")
+}
+
+[node name="Main" type="Node2D"]
+
+[node name="scenario" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="farmer" parent="." instance=ExtResource("2_0xm2m")]
+z_index = 2
+position = Vector2(284, 242)
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="farmer"]
+position = Vector2(1, 1)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="tomato" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(192, 223)
+collision_layer = 2
+
+[node name="hold_info" type="CanvasLayer" parent="."]
+
+[node name="tomato_crops_label" type="Label" parent="hold_info"]
+texture_filter = 1
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 197.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0.989535, 0.00303515, 0.00166494, 1)
+theme_override_colors/font_shadow_color = Color(0.419608, 0.0862745, 0.0862745, 1)
+theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1)
+theme_override_font_sizes/font_size = 19
+text = "Sementes de Tomate"
+
+[node name="tomato_crops_value" type="Label" parent="hold_info"]
+texture_filter = 1
+offset_left = 202.0
+offset_top = 4.0
+offset_right = 236.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.989535, 0.00303515, 0.00166494, 1)
+theme_override_colors/font_shadow_color = Color(0.419608, 0.0862745, 0.0862745, 1)
+theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1)
+theme_override_font_sizes/font_size = 19
+text = "0"
+script = ExtResource("4_lquwl")
+
+[node name="bucket_crops" type="Area2D" parent="."]
+position = Vector2(334, 233)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket_crops"]
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bucket_crops"]
+sprite_frames = SubResource("SpriteFrames_272bh")
+animation = &"bucket"
+
+[node name="butterfly" type="Area2D" parent="."]
+position = Vector2(360, 150)
+scale = Vector2(0.3, 0.3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="butterfly"]
+sprite_frames = SubResource("SpriteFrames_d13ii")
+animation = &"butterfly"
+autoplay = "butterfly"
+frame_progress = 0.473185
+speed_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="butterfly"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="ColorRect" type="ColorRect" parent="butterfly"]
+z_index = 2
+offset_left = -1410.0
+offset_top = -637.0
+offset_right = 2763.0
+offset_bottom = 1716.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="butterfly"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_a6jrf")
+}
+
+[connection signal="body_entered" from="tomato" to="tomato" method="_on_body_entered"]
+[connection signal="body_exited" from="tomato" to="tomato" method="_on_body_exited"]
+[connection signal="body_entered" from="bucket_crops" to="farmer" method="_on_bucket_crops_body_entered"]

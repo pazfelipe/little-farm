@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://bkf80p4gteoik"]
+
+[ext_resource type="Texture2D" uid="uid://dpcqcgh6y4bo0" path="res://assets/tilemaps/summer tilemap.png" id="1_i5yj2"]
+[ext_resource type="Script" uid="uid://btkiphbefi0w5" path="res://animated_water_plant.gd" id="2_xdqjk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wcun"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(128, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcmoc"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(128, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmoj4"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(128, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ob8"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(128, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chhyq"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(144, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru5un"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(144, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ael1"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(144, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2tm4"]
+atlas = ExtResource("1_i5yj2")
+region = Rect2(144, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_746c1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wcun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcmoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmoj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ob8")
+}],
+"loop": true,
+"name": &"plant_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chhyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru5un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ael1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2tm4")
+}],
+"loop": true,
+"name": &"plant_right",
+"speed": 5.0
+}]
+
+[node name="animated_water_plant" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_746c1")
+animation = &"plant_left"
+frame_progress = 0.91784
+script = ExtResource("2_xdqjk")
