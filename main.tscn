@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=37 format=3 uid="uid://ct5dr32p4lpid"]
 
 [ext_resource type="Script" uid="uid://bd102d21o31gh" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
@@ -198,12 +198,15 @@ _data = {
 &"get_night": SubResource("Animation_7mycd")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(26, 33)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5vw27")
 
 [node name="farmer" parent="." instance=ExtResource("2_0xm2m")]
 z_index = 2
-position = Vector2(284, 242)
+position = Vector2(248, 245)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="farmer"]
@@ -289,6 +292,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_a6jrf")
 }
 
+[node name="door_house" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_house"]
+position = Vector2(236, 160.5)
+shape = SubResource("RectangleShape2D_kek77")
+
 [connection signal="body_entered" from="tomato" to="tomato" method="_on_body_entered"]
 [connection signal="body_exited" from="tomato" to="tomato" method="_on_body_exited"]
 [connection signal="body_entered" from="bucket_crops" to="farmer" method="_on_bucket_crops_body_entered"]
+[connection signal="body_entered" from="door_house" to="farmer" method="_on_door_house_body_entered"]

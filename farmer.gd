@@ -43,3 +43,11 @@ func _on_bucket_crops_body_entered(body: Node2D) -> void:
 
 func _on_tomato_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_door_house_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file.bind("res://scenes/inside_house.tscn").call_deferred() 
+
+
+func _on_door_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file.bind("res://main.tscn").call_deferred() 
