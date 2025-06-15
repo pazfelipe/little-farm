@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4317i5s4nl00"]
+[gd_scene load_steps=11 format=3 uid="uid://c4317i5s4nl00"]
 
 [ext_resource type="Texture2D" uid="uid://13wwtciahmlw" path="res://assets/crops/crops.png" id="1_18l8l"]
+[ext_resource type="Script" uid="uid://b8mb5blbab2sh" path="res://scripts/corn.gd" id="1_wpnr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpnr7"]
 size = Vector2(15, 16)
@@ -56,6 +57,7 @@ animations = [{
 }]
 
 [node name="Corn" type="Area2D"]
+script = ExtResource("1_wpnr7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1)
@@ -64,4 +66,4 @@ shape = SubResource("RectangleShape2D_wpnr7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fvmcl")
 animation = &"corn"
-frame_progress = 0.0870288
+frame_progress = 0.115042
