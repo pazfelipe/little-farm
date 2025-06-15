@@ -4,6 +4,7 @@ var is_allowed_to_plant: bool = false
 var action_pressed = false
 var can_harvest = false
 var instance: Node2D
+var crops_to_be_collected = 0
 
 @export var crop: String = ""
 
@@ -53,7 +54,8 @@ func harvest() -> void:
 
 	can_harvest = false
 	is_allowed_to_plant = true
+	Crops.add_quantity(crop, crops_to_be_collected)
 		
 func _on_crop_ready(harvest: Dictionary) -> void:
-	Crops.add_quantity(crop, harvest.get("harvested_crops", 0))
+	crops_to_be_collected = harvest.get("harvested_crops", 0)
 	can_harvest = true

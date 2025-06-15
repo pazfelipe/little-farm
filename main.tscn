@@ -390,23 +390,24 @@ script = ExtResource("2_272bh")
 
 [node name="hold_info" type="CanvasLayer" parent="."]
 
-[node name="tomato_crops_label" type="Label" parent="hold_info"]
+[node name="crops_label" type="Label" parent="hold_info"]
 texture_filter = 1
+offset_left = 1.0
 offset_top = 1.0
-offset_right = 284.0
+offset_right = 135.0
 offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.989535, 0.00303515, 0.00166494, 1)
 theme_override_colors/font_shadow_color = Color(0.419608, 0.0862745, 0.0862745, 1)
 theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1)
 theme_override_font_sizes/font_size = 28
-text = "Sementes de Tomate"
+text = "Sementes"
 
-[node name="tomato_crops_value" type="Label" parent="hold_info"]
+[node name="crops_values" type="Label" parent="hold_info"]
 texture_filter = 1
-offset_left = 300.0
-offset_top = 2.0
-offset_right = 334.0
-offset_bottom = 41.0
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 134.0
+offset_bottom = 74.0
 theme_override_colors/font_color = Color(0.989535, 0.00303515, 0.00166494, 1)
 theme_override_colors/font_shadow_color = Color(0.419608, 0.0862745, 0.0862745, 1)
 theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1)
