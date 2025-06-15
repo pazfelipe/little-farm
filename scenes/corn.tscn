@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://c4317i5s4nl00"]
+
+[ext_resource type="Texture2D" uid="uid://13wwtciahmlw" path="res://assets/crops/crops.png" id="1_18l8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpnr7"]
+size = Vector2(15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlh6f"]
+atlas = ExtResource("1_18l8l")
+region = Rect2(80, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pep1m"]
+atlas = ExtResource("1_18l8l")
+region = Rect2(64, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkew2"]
+atlas = ExtResource("1_18l8l")
+region = Rect2(48, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c4hu"]
+atlas = ExtResource("1_18l8l")
+region = Rect2(32, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17w8v"]
+atlas = ExtResource("1_18l8l")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e80lc"]
+atlas = ExtResource("1_18l8l")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvmcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlh6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pep1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkew2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c4hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e80lc")
+}],
+"loop": true,
+"name": &"corn",
+"speed": 5.0
+}]
+
+[node name="Corn" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_wpnr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fvmcl")
+animation = &"corn"
+frame_progress = 0.44006
