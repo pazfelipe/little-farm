@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=36 format=3 uid="uid://ct5dr32p4lpid"]
 
 [ext_resource type="Script" uid="uid://bd102d21o31gh" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvpallg5h1jaw" path="res://assets/tilemaps/summer and spring items.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b4l1enbld0m0y" path="res://assets/bugs/butterfly.png" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://b2wbst250xpqm" path="res://scripts/lbl_show_local_time.gd" id="9_kek77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(14, 14)
@@ -246,6 +247,16 @@ theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1
 theme_override_font_sizes/font_size = 28
 text = "0"
 script = ExtResource("4_lquwl")
+
+[node name="lbl_show_local_time" type="Label" parent="hold_info"]
+offset_left = 1043.0
+offset_top = 4.0
+offset_right = 1165.0
+offset_bottom = 39.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Hora local"
+script = ExtResource("9_kek77")
 
 [node name="bucket_crops" type="Area2D" parent="."]
 position = Vector2(334, 233)
