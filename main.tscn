@@ -1,10 +1,9 @@
-[gd_scene load_steps=40 format=4 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=39 format=4 uid="uid://ct5dr32p4lpid"]
 
 [ext_resource type="Script" uid="uid://bd102d21o31gh" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cidclijdo8rmc" path="res://farmer.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://cboh5gq35r456" path="res://scenario.gd" id="2_272bh"]
-[ext_resource type="PackedScene" uid="uid://cudh423j6tp5e" path="res://scenes/crops/tomato.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dvpallg5h1jaw" path="res://assets/tilemaps/summer and spring items.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b4l1enbld0m0y" path="res://assets/bugs/butterfly.png" id="6_7mycd"]
@@ -388,10 +387,6 @@ position_smoothing_enabled = true
 [node name="scenario" parent="." instance=ExtResource("1_ig7tw")]
 script = ExtResource("2_272bh")
 
-[node name="tomato" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(192, 223)
-collision_layer = 2
-
 [node name="hold_info" type="CanvasLayer" parent="."]
 
 [node name="tomato_crops_label" type="Label" parent="hold_info"]
@@ -495,7 +490,5 @@ crop = "tomato"
 position = Vector2(0, 178)
 crop = "corn"
 
-[connection signal="body_entered" from="tomato" to="tomato" method="_on_body_entered"]
-[connection signal="body_exited" from="tomato" to="tomato" method="_on_body_exited"]
 [connection signal="body_entered" from="bucket_crops" to="farmer" method="_on_bucket_crops_body_entered"]
 [connection signal="body_entered" from="door_house" to="farmer" method="_on_door_house_body_entered"]
