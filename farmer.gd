@@ -4,11 +4,14 @@ var SPEED = 100
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
-	print(Globals.tomato_crops)
 	
 	var butterfly = get_parent().get_node_or_null("butterfly/AnimationPlayer")
 	if butterfly:
 		butterfly.play("get_day")
+		
+
+func _process(delta: float) -> void:
+	Char.update_position(position)
 	
 func _physics_process(delta: float) -> void:
 	
@@ -39,10 +42,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_bucket_crops_body_entered(body: Node2D) -> void:
 	Crops.add_crop("tomato", 1)
-
-
-func _on_tomato_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
 
 
 func _on_door_house_body_entered(body: Node2D) -> void:
