@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://cidclijdo8rmc"]
+[gd_scene load_steps=30 format=3 uid="uid://cidclijdo8rmc"]
 
 [ext_resource type="Script" uid="uid://ngej7plopnsm" path="res://farmer.gd" id="1_bejvd"]
 [ext_resource type="Texture2D" uid="uid://x3mt8byryxp3" path="res://assets/characters/walk and idle.png" id="1_u8akl"]
+[ext_resource type="Texture2D" uid="uid://dcqgrc80bdgt2" path="res://assets/characters/walk_up.png" id="3_bshyv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bejvd"]
 atlas = ExtResource("1_u8akl")
@@ -83,6 +84,22 @@ region = Rect2(144, 48, 24, 24)
 atlas = ExtResource("1_u8akl")
 region = Rect2(168, 48, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1ulj"]
+atlas = ExtResource("3_bshyv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wlpg"]
+atlas = ExtResource("3_bshyv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaqwj"]
+atlas = ExtResource("3_bshyv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_715hh"]
+atlas = ExtResource("3_bshyv")
+region = Rect2(72, 0, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1n1wv"]
 animations = [{
 "frames": [{
@@ -159,19 +176,36 @@ animations = [{
 "loop": true,
 "name": &"moving_forward",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1ulj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wlpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaqwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_715hh")
+}],
+"loop": true,
+"name": &"moving_up",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8akl"]
-size = Vector2(13, 19)
+size = Vector2(12, 5)
 
 [node name="farmer" type="CharacterBody2D"]
 script = ExtResource("1_bejvd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1n1wv")
-animation = &"moving_forward"
-frame_progress = 0.88541
+animation = &"moving_up"
+frame_progress = 0.104657
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.5)
+position = Vector2(1, 8.5)
 shape = SubResource("RectangleShape2D_u8akl")

@@ -32,6 +32,9 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("ui_right"):
 		$AnimatedSprite2D.play("moving_forward")
+		
+	if Input.is_action_just_pressed("ui_up"):
+		$AnimatedSprite2D.play("moving_up")
 
 
 func _on_bucket_crops_body_entered(body: Node2D) -> void:
