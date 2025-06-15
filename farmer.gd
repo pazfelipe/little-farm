@@ -51,3 +51,11 @@ func _on_door_house_body_entered(body: Node2D) -> void:
 
 func _on_door_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file.bind("res://main.tscn").call_deferred() 
+
+
+func _on_bed_body_entered(body: Node2D) -> void:
+	Globals.bed_dialog = "Acho que vou dormir ...."
+
+
+func _on_bed_body_exited(body: Node2D) -> void:
+	Globals.bed_dialog = ""
