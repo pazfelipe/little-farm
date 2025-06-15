@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cidclijdo8rmc" path="res://farmer.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://cboh5gq35r456" path="res://scenario.gd" id="2_272bh"]
-[ext_resource type="PackedScene" uid="uid://cudh423j6tp5e" path="res://tomato.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cudh423j6tp5e" path="res://scenes/crops/tomato.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dvpallg5h1jaw" path="res://assets/tilemaps/summer and spring items.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b4l1enbld0m0y" path="res://assets/bugs/butterfly.png" id="6_7mycd"]
@@ -473,21 +473,27 @@ tile_set = SubResource("TileSet_efxa6")
 
 [node name="Plot" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(-68, 145)
+crop = "tomato"
 
 [node name="Plot2" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(-34, 145)
+crop = "tomato"
 
 [node name="Plot3" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(-67, 177)
+crop = "corn"
 
 [node name="Plot4" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(0, 146)
+crop = "corn"
 
 [node name="Plot5" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(-34, 178)
+crop = "tomato"
 
 [node name="Plot6" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(0, 178)
+crop = "corn"
 
 [connection signal="body_entered" from="tomato" to="tomato" method="_on_body_entered"]
 [connection signal="body_exited" from="tomato" to="tomato" method="_on_body_exited"]
