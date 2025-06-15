@@ -17,4 +17,4 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	$AnimatedSprite2D.frame = 5
 	
-	emit_signal("crop_fully_grown", 5)
+	emit_signal("crop_fully_grown", {"coin": 1, "harvested_crops": randi_range(0,2)})

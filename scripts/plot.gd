@@ -3,7 +3,6 @@ extends Area2D
 var is_allowed_to_plant: bool = false
 var action_pressed = false
 var can_harvest = false
-var crop_amount = 0
 var instance: Node2D
 
 @export var crop: String = ""
@@ -30,6 +29,10 @@ func try_harvest():
 		harvest()
 
 func plant() -> void:
+	
+	if Crops.get_quantity(crop) == 0:
+		return
+	
 	var crop_path = "res://scenes/crops/" + crop + ".tscn"
 	var crop_scene = load(crop_path)
 
@@ -38,6 +41,7 @@ func plant() -> void:
 		instance.position = Vector2(111.5, 96.5)
 		add_child(instance)
 		is_allowed_to_plant = false
+		Crops.reduce_quantity(crop, 1)
 		instance.crop_fully_grown.connect(_on_crop_ready)
 	else:
 		print("Erro: cena não encontrada em ", crop_path)
@@ -50,6 +54,6 @@ func harvest() -> void:
 	can_harvest = false
 	is_allowed_to_plant = true
 		
-func _on_crop_ready(value: int) -> void:
-	crop_amount = value
+func _on_crop_ready(harvest: Dictionary) -> void:
+	Crops.add_quantity(crop, harvest.get("harvested_crops", 0))
 	can_harvest = true

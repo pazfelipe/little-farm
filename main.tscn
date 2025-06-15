@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=40 format=4 uid="uid://ct5dr32p4lpid"]
 
 [ext_resource type="Script" uid="uid://bd102d21o31gh" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b4l1enbld0m0y" path="res://assets/bugs/butterfly.png" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://b2wbst250xpqm" path="res://scripts/lbl_show_local_time.gd" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://u3h2pt14bfg0" path="res://scenes/npcs/shop.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cwwrn8sjn3m1i" path="res://scenes/plot.tscn" id="11_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
@@ -489,6 +490,9 @@ crop = "tomato"
 [node name="Plot6" parent="Garden" instance=ExtResource("11_efxa6")]
 position = Vector2(0, 178)
 crop = "corn"
+
+[node name="shop" parent="." instance=ExtResource("10_4c57u")]
+position = Vector2(93, 371)
 
 [connection signal="body_entered" from="bucket_crops" to="farmer" method="_on_bucket_crops_body_entered"]
 [connection signal="body_entered" from="door_house" to="farmer" method="_on_door_house_body_entered"]

@@ -41,7 +41,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_bucket_crops_body_entered(body: Node2D) -> void:
-	Crops.add_crop("tomato", 1)
+	Crops.add_quantity("tomato", 1)
+	Crops.add_quantity("corn", 1)
 
 
 func _on_door_house_body_entered(body: Node2D) -> void:
