@@ -1,4 +1,4 @@
 extends Label
 
 func _process(delta: float) -> void:
-	text = str(Globals.tomato_crops)
+	text = str(Crops.get_quantity("tomato"))

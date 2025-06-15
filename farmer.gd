@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_bucket_crops_body_entered(body: Node2D) -> void:
-	Globals.tomato_crops += 1
+	Crops.add_crop("tomato", 1)
 
 
 func _on_tomato_body_exited(body: Node2D) -> void:
