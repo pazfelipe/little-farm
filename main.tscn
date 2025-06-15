@@ -1,5 +1,6 @@
-[gd_scene load_steps=34 format=3 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=35 format=3 uid="uid://ct5dr32p4lpid"]
 
+[ext_resource type="Script" uid="uid://bd102d21o31gh" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cidclijdo8rmc" path="res://farmer.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://cboh5gq35r456" path="res://scenario.gd" id="2_272bh"]
@@ -197,6 +198,7 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5vw27")
 
 [node name="scenario" parent="." instance=ExtResource("1_ig7tw")]
 script = ExtResource("2_272bh")
