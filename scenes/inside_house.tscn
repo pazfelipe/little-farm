@@ -596,10 +596,10 @@ position = Vector2(712, 288.5)
 shape = SubResource("RectangleShape2D_k5w3f")
 
 [node name="bed_dialog" type="Label" parent="."]
-offset_left = 670.0
-offset_top = 251.0
-offset_right = 760.0
-offset_bottom = 307.0
+offset_left = 634.0
+offset_top = 252.0
+offset_right = 724.0
+offset_bottom = 308.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "Initial dialog"
