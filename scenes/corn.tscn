@@ -66,4 +66,4 @@ shape = SubResource("RectangleShape2D_wpnr7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fvmcl")
 animation = &"corn"
-frame_progress = 0.115042
+frame_progress = 0.963407
