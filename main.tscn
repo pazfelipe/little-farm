@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=34 format=3 uid="uid://ct5dr32p4lpid"]
 
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cidclijdo8rmc" path="res://farmer.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cboh5gq35r456" path="res://scenario.gd" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://cudh423j6tp5e" path="res://tomato.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dvpallg5h1jaw" path="res://assets/tilemaps/summer and spring items.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
@@ -148,6 +149,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u8w0"]
 size = Vector2(32, 23)
 
+[sub_resource type="Animation" id="Animation_lswn8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butterfly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 150)]
+}
+
 [sub_resource type="Animation" id="Animation_0odxb"]
 resource_name = "flying"
 length = 5.0
@@ -164,64 +180,13 @@ tracks/0/keys = {
 "values": [Vector2(360, 150), Vector2(332, 177)]
 }
 
-[sub_resource type="Animation" id="Animation_lswn8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("butterfly:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(360, 150)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("butterfly/ColorRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "get_day"
+length = 8.0
 
 [sub_resource type="Animation" id="Animation_7mycd"]
 resource_name = "get_night"
 length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("butterfly/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.166667, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_272bh"]
-resource_name = "get_day"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("butterfly/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a6jrf"]
 _data = {
@@ -234,6 +199,7 @@ _data = {
 [node name="Main" type="Node2D"]
 
 [node name="scenario" parent="." instance=ExtResource("1_ig7tw")]
+script = ExtResource("2_272bh")
 
 [node name="farmer" parent="." instance=ExtResource("2_0xm2m")]
 z_index = 2
@@ -241,8 +207,12 @@ position = Vector2(284, 242)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="farmer"]
-position = Vector2(1, 1)
 zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 883
+limit_bottom = 412
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="tomato" parent="." instance=ExtResource("3_h2yge")]
@@ -253,26 +223,25 @@ collision_layer = 2
 
 [node name="tomato_crops_label" type="Label" parent="hold_info"]
 texture_filter = 1
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 197.0
-offset_bottom = 30.0
+offset_top = 1.0
+offset_right = 284.0
+offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.989535, 0.00303515, 0.00166494, 1)
 theme_override_colors/font_shadow_color = Color(0.419608, 0.0862745, 0.0862745, 1)
 theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1)
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 28
 text = "Sementes de Tomate"
 
 [node name="tomato_crops_value" type="Label" parent="hold_info"]
 texture_filter = 1
-offset_left = 202.0
-offset_top = 4.0
-offset_right = 236.0
-offset_bottom = 31.0
+offset_left = 300.0
+offset_top = 2.0
+offset_right = 334.0
+offset_bottom = 41.0
 theme_override_colors/font_color = Color(0.989535, 0.00303515, 0.00166494, 1)
 theme_override_colors/font_shadow_color = Color(0.419608, 0.0862745, 0.0862745, 1)
 theme_override_colors/font_outline_color = Color(0.966939, 0.966939, 0.966939, 1)
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 28
 text = "0"
 script = ExtResource("4_lquwl")
 
@@ -300,13 +269,6 @@ speed_scale = 1.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="butterfly"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_1u8w0")
-
-[node name="ColorRect" type="ColorRect" parent="butterfly"]
-z_index = 2
-offset_left = -1410.0
-offset_top = -637.0
-offset_right = 2763.0
-offset_bottom = 1716.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="butterfly"]
 root_node = NodePath("../..")
