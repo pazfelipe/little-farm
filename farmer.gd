@@ -14,11 +14,15 @@ func _physics_process(delta: float) -> void:
 	
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+#	if enabled it disables the diagonal motion
+	#if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
+		#direction.x = 0
+	
 	if direction:
 		velocity = direction * SPEED
 		
 	else:
-		velocity = Vector2(0,0)
+		velocity = Vector2.ZERO
 		$AnimatedSprite2D.play("idle")
 	
 	move_and_slide()
