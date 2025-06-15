@@ -59,3 +59,14 @@ func _on_bed_body_entered(body: Node2D) -> void:
 
 func _on_bed_body_exited(body: Node2D) -> void:
 	Globals.bed_dialog = ""
+
+
+func _on_npc_shop_body_entered(body: Node2D) -> void:
+	var tomatoes_to_sell = Crops.get_items_to_sell("tomato")
+	var corns_to_sell = Crops.get_items_to_sell("tomato")
+	
+	if tomatoes_to_sell > 0:
+		Crops.sell_item("tomato")
+		
+	if corns_to_sell > 0:
+		Crops.sell_item("corn")

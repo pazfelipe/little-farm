@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://ct5dr32p4lpid"]
+[gd_scene load_steps=42 format=4 uid="uid://ct5dr32p4lpid"]
 
 [ext_resource type="Script" uid="uid://bd102d21o31gh" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://beeub8w053o63" path="res://scenario.tscn" id="1_ig7tw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b20np1286t5u7" path="res://tomato_crops_value.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b4l1enbld0m0y" path="res://assets/bugs/butterfly.png" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://djlgmo1pyyhqi" path="res://scripts/vegetables_values.gd" id="6_efxa6"]
+[ext_resource type="Script" uid="uid://d3pgpy2wvu06w" path="res://scripts/coins_value.gd" id="8_dg77c"]
 [ext_resource type="Script" uid="uid://b2wbst250xpqm" path="res://scripts/lbl_show_local_time.gd" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://u3h2pt14bfg0" path="res://scenes/npcs/shop.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cwwrn8sjn3m1i" path="res://scenes/plot.tscn" id="11_efxa6"]
@@ -439,6 +440,17 @@ theme_override_font_sizes/font_size = 25
 text = "Hora local"
 script = ExtResource("9_kek77")
 
+[node name="coins_value" type="Label" parent="hold_info"]
+offset_left = 458.0
+offset_top = 7.0
+offset_right = 557.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.852076, 0.622762, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Moedas: 0"
+script = ExtResource("8_dg77c")
+
 [node name="bucket_crops" type="Area2D" parent="."]
 position = Vector2(334, 233)
 
@@ -511,3 +523,4 @@ position = Vector2(93, 371)
 
 [connection signal="body_entered" from="bucket_crops" to="farmer" method="_on_bucket_crops_body_entered"]
 [connection signal="body_entered" from="door_house" to="farmer" method="_on_door_house_body_entered"]
+[connection signal="body_entered" from="npc_shop" to="farmer" method="_on_npc_shop_body_entered"]

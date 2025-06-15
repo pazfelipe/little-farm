@@ -27,3 +27,7 @@ func add_item_to_sell(item: String, quantity: int, price: int) -> void:
 	
 func get_items_to_sell(vegetable: String) -> int:
 	return vegetables_to_sell[vegetable]["quantity"]
+	
+func sell_item(vegetable: String) -> void:
+	Char.coins += (vegetables_to_sell[vegetable]["quantity"] * vegetables_to_sell[vegetable]["price"])
+	vegetables_to_sell[vegetable]["quantity"] = 0
